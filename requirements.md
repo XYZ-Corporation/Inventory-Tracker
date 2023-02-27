@@ -1,38 +1,65 @@
-#Software Requirements
+# Software Requirements
 
 Vision
-Minimum Length: 3-5 sentences
 
-What is the vision of this product?
+- What is the vision of this product?
 
-What pain point does this project solve?
+--Making sure that kitchen operations are going smoothly without running into unexpected shortages. 
 
-Why should we care about your product?
+- What pain point does this project solve?
+
+--inventory shortages/unattractive data presentation that's hard to track/automates the process of restocking items that are low & reduces possible errors.  
+
+- Why should we care about your product?
+
+--Helps small businesses, provides ease of use and accessibility to restauraunt owners, helps to reduce logistical errors/mishaps.
 
 Scope (In/Out)
 IN - What will your product do
-Describe the individual features that your product will do.
+
+-- 
+
 High overview of each. Only need to list 4-5
-Example:
-The web app will provide information to the users about all the different Cat Cafe’s in the area
-The web app will provide both walking and driving directions to each of the destinations
-Users will be able to “Star” their favorite shops.
-Each shop will contain reviews of the customer’s experiences
+
+-- alerts on low supplies -- low supplies will be in font: bold/red
+
+-- ergonomic interface in ordering, checklist  -- list of supplies will be ordered thru checklist boxex
+
+-- real-time updated price of supplies from vendors -- checklist of supplies will have the updated vendor price beside it
+
+-- provide one management tool for all kitchens, sync, overview monitoring for owners -- a webpage for the owner shows multiple restaurants with their # of supplies, expenditures and allowance balance
+
+
+
 OUT - What will your product not do.
-These should be features that you will make very clear from the beginning that you will not do during development. These should be limited and very few. Pick your battles wisely. This should only be 1 or 2 things. Example: My website will never turn into an IOS or Android app.
-Minimum Viable Product vs
+
+--Our product will not be available as a mobile app.
+
+--Our product will not be able to live track reorders of supplies.
+
+
 What will your MVP functionality be?
 
-What are your stretch goals?
+Login page (admin rights)  >>> Report page where user is able to track current stock and see items that are low highlighted in red, generate a request page for a restock, 'pending' category for items that were ordered, alert counts towards the restock  >>> vendor restock page, where user can manually finalize the order and send it to a vendor.
 
-Stretch
-What stretch goals are you going to aim for?
 
-Functional Requirements
+- Stretch
+
+--add possibility to track daily consumption for each prod.
+
+--real-time annual expenditure balance, in cart checkout -- when checking out annual annual allowance and expenditures balances would show
+
+--Add user login page with reduced functionality
+
+
+- Functional Requirements
 List the functionality of your product. This will consist of tasks such as the following:
+User can view current stock based on their current input.
+User can request new items for their inventory 
+User can review visual representation of their current supply
+User can view previous restock requests 
 
-An admin can create and delete user accounts
-A user can update their profile information
-A user can search all of the products in the inventory
-Data Flow
-Describe the flow of data in your application. Write out what happens from the time the user begins using the app to the time the user is done with the app. Think about the “Happy Path” of the application. Describe through visuals and text what requests are made, and what dat
+- Data Flow
+
+User enters their password and login information, user reviews their current stock and might be warned with an alert if certain items are low, user then ask the app to generate a request by clicking a button, user then will be transferred to the next page where request is generated and adjust numbers manually. User then can send the request to a vendor. User can view and access previous reports.
+
