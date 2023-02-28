@@ -1,3 +1,3 @@
-# project
+# Inventory Tracker Domain Model
 
-Domain modeling: https://gyazo.com/3b317da8a48776fad247fc23be72c057
+![Domain Model](img/Domain%20Model.png)
