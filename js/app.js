@@ -33,6 +33,7 @@ function storePurchase()
   return minStorage;
 }
 
+storePurchase();
 
 
 function renderChart() {
