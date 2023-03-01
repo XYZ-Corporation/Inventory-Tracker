@@ -1,14 +1,15 @@
 'use strict';
 // ******* GLOBALS ********
 let globalArray = [];
-console.log(globalArray);
+let globalStatic = [];
+let minStorage = [];
 
 
 
 //  ******* DOM WINDOWS ********
 let canvasElem = document.getElementById('prod-chart');
-let formElem = document.getElementById('request-form');
-let restock = document.getElementById('restock-button');
+// let formElem = document.getElementById('request-form');
+
 
 
 // ******* CONSTRUCTOR FUNCTION ********
@@ -18,7 +19,18 @@ function Inventory(name, price) {
   this.price = price;
   this.min = Math.floor(Math.random() * 37 + 4);
   // this.status = 0;
+}
 
+
+function storePurchase()
+{
+  for (let i = 0; i < globalArray.length; i++) {
+    if (globalArray[i].amount < globalArray[i].min)
+    {
+      minStorage.push(globalArray[i]);
+    }
+  }
+  return minStorage;
 }
 
 
@@ -33,7 +45,7 @@ function renderChart() {
 
   for (let i = 0; i < globalArray.length; i++) {
     invName.push(globalArray[i].name);
-    if (globalArray[i].amount < globalArray[i].min){
+    if (globalArray[i].amount < globalArray[i].min) {
       invAmountMinus.push(globalArray[i].amount);
       invMinMinus.push(globalArray[i].min - globalArray[i].amount);
       invAmountPlus.push(0);
@@ -94,7 +106,6 @@ function renderChart() {
   new Chart(canvasElem, chartObj); ///eslint-disable-line
 }
 
-
 // ***** EXECTUABLE CODE ******
 let pearInv = new Inventory('pear', 40);
 let fishInv = new Inventory('fish', 50);
@@ -113,13 +124,32 @@ let porkInv = new Inventory('pork', 50);
 globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, pastaInv, breadInv, saladInv, ketchupInv, soupInv, porkInv);
 
 
+
 renderChart();
+storePurchase();
+
+/**********LOCAL STORAGE ************/
+
+let purchaseList = JSON.stringify(minStorage);
+localStorage.setItem('myPurchase', purchaseList);
+console.log(purchaseList);
+
+let globalStorage = JSON.stringify(globalArray);
+localStorage.setItem('myGlobal', globalStorage);
+console.log(globalStorage);
 
 
+/*************Event Listeners **************/
 
 
+let restock = document.getElementById('restock-button');
+restock.addEventListener('click', restockHandler);
 
-
+function restockHandler(event) {
+  event.preventDefault();
+  console.log('request handler');
+  document.location.href = '/request.html';
+}
 
 
 
