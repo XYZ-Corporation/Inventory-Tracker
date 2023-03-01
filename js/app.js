@@ -26,14 +26,24 @@ function Inventory(name, price) {
 function renderChart() {
 
   let invName = [];
-  let invAmount = [];
-  let invMin = [];
+  let invAmountMinus = [];
+  let invAmountPlus = [];
+  let invMinMinus = [];
+  let invMinPlus = [];
 
   for (let i = 0; i < globalArray.length; i++) {
     invName.push(globalArray[i].name);
-    invAmount.push(globalArray[i].amount);
-    invMin.push(globalArray[i].min);
-
+    if (globalArray[i].amount < globalArray[i].min){
+      invAmountMinus.push(globalArray[i].amount);
+      invMinMinus.push(globalArray[i].min - globalArray[i].amount);
+      invAmountPlus.push(0);
+      invMinPlus.push(0);
+    } else {
+      invAmountMinus.push(0);
+      invMinMinus.push(0);
+      invAmountPlus.push(globalArray[i].amount - globalArray[i].min);
+      invMinPlus.push(globalArray[i].min);
+    }
   }
 
   let chartObj = {
@@ -41,24 +51,42 @@ function renderChart() {
     data: {
       labels: invName,
       datasets: [{
-        label: 'Quantity',
-        data: invAmount,
+        label: 'Remaining in deficit',
+        data: invAmountMinus,
         borderWidth: 5,
         backgroundColor: ['green'],
         borderColor: ['green']
       },
       {
-        label: 'Min Qty',
-        data: invMin,
+        label: 'not surplus',
+        data: invMinPlus,
+        borderWidth: 3,
+        backgroundColor: ['green'],
+        borderColor: ['red']
+      },
+      {
+        label: 'Deficit',
+        data: invMinMinus,
         borderWidth: 5,
         backgroundColor: ['red'],
         borderColor: ['red']
+      },
+      {
+        label: 'excess',
+        data: invAmountPlus,
+        borderWidth: 5,
+        backgroundColor: ['green'],
+        borderColor: ['green']
       }]
     },
     options: {
       scales: {
         y: {
-          beginAtZero: false
+          beginAtZero: false,
+          stacked: true
+        },
+        x: {
+          stacked: true
         }
       }
     }
