@@ -94,18 +94,6 @@ function renderChart() {
   new Chart(canvasElem, chartObj); ///eslint-disable-line
 }
 
-function minInventory(event) {
-  let counter = 0;
-  for (let i = 0; i < globalArray.length; i++) {
-    if (globalArray.amount[i] < globalArray.min[i]) {
-      counter++;
-    }
-  }
-  if (counter != 0) {
-
-  }
-}
-
 
 // ***** EXECTUABLE CODE ******
 let pearInv = new Inventory('pear', 40);
@@ -127,34 +115,8 @@ globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, past
 
 renderChart();
 
-resultsBtn.addEventListener('load', minInventory);
-
-resultsBtn2.addEventListener('click', handleShowResults2);
 
 
-//***************** optional chart, start 
-  // const config = {
-  //   type: 'bar',
-  //   data: data,
-  //   options: {
-  //     plugins: {
-  //       title: {
-  //         display: true,
-  //         text: 'Chart.js Bar Chart - Stacked'
-  //       },
-  //     },
-  //     responsive: true,
-  //     scales: {
-  //       x: {
-  //         stacked: true,
-  //       },
-  //       y: {
-  //         stacked: true
-  //       }
-  //     }
-  //   }
-  // };
-  //*************** optional chart, end
 
 
 
