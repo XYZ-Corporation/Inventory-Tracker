@@ -93,6 +93,8 @@ function renderChart() {
       }]
     },
     options: {
+      maintainAspectRatio: false,
+      responsive: true,
       scales: {
         y: {
           beginAtZero: false,
