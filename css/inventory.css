@@ -1,5 +1,58 @@
+body {
+background-color: lightgrey;
+
+}
+
+
 #restock-button {
   display: block;
-  margin: 40px auto; 
+  margin: 10px auto; 
+
+}
+
+
+
+#prod-chart {
+display: block;
+margin: auto;
+border: 3px solid;
+
+}
+
+
+
+nav {
+  background-color: gray;
+  margin-bottom: 30px;
+  height: 35px;
+}
+
+#login {
+background-color: black;
+font-size: 25px;
+color: white;
+border-radius: 15px;
+
+
+
+}
+
+#request {
+  background-color: black;
+  font-size: 25px;
+  color: white;
+  border-radius: 15px;
+ 
+
+}
+
+#aboutus2 {
+  background-color: black;
+  font-size: 25px;
+  color: white;
+  border-radius: 15px;
+
+
+
 
 }

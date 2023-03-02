@@ -1,5 +1,5 @@
 body {
-background-color:midnightblue;
+background-color: lightblue;
 
 }
 
@@ -69,10 +69,13 @@ font-size: larger;
 
 }
 
+footer {
+ text-align: center;
+ margin-top: 600px;
+}
 #aboutus {
-  text-align: center;
-  display: flex;
-  flex-direction:column;
-  margin: auto; 
+color: white;
+
 
 }
+
