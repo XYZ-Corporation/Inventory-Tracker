@@ -3,16 +3,20 @@
 let tableElement = document.getElementById('table');
 let purchaseHistory = [];
 let userInput = [];
-// let minStorage = [];
+let minStorage = [];
+let parsedLocalStorage;
+let retrievedStorage; 
 
+retrievedStorage = localStorage.getItem('myPurchase');
+parsedLocalStorage = JSON.parse(retrievedStorage);
 
 function render() {
-  for (let i = 0; i < minStorage.length; i++) {
+  for (let i = 0; i < parsedLocalStorage.length; i++) {
     let nameRow = document.createElement('tr');
     tableElement.appendChild(nameRow);
     let itemName = document.createElement('td');
     nameRow.appendChild(itemName);
-    itemName.textContent = minStorage[i].name;
+    itemName.textContent = parsedLocalStorage[i].name;
     console.log(minStorage);
 
 
@@ -20,23 +24,16 @@ function render() {
     nameRow.appendChild(amountRow);
     let itemAmount = document.createElement('td');
     amountRow.appendChild(itemAmount);
-    itemAmount.textContent = minStorage[i].price;
+    itemAmount.textContent = parsedLocalStorage[i].price;
 
   }
-  
+
 
 
 };
 
-render(); 
-
-function updateStorage() {
-    
-  let retrievedStorage = getItem('myStorage');
-
-  let parsedStorage = JSON.parse(retrievedStorage);
- 
-  for()
+render();
 
 
-}
+console.log(parsedLocalStorage);
+

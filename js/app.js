@@ -2,7 +2,7 @@
 // ******* GLOBALS ********
 let globalArray = [];
 let globalStatic = [];
-let minStorage = [];
+let lowStorage = [];
 
 
 
@@ -18,22 +18,21 @@ function Inventory(name, price) {
   this.amount = Math.floor(Math.random() * 37 + 4);
   this.price = price;
   this.min = Math.floor(Math.random() * 37 + 4);
-  // this.status = 0;
+  globalArray.push(this);
 }
 
 
-function storePurchase()
-{
+function storePurchase() {
   for (let i = 0; i < globalArray.length; i++) {
-    if (globalArray[i].amount < globalArray[i].min)
-    {
-      minStorage.push(globalArray[i]);
+    if (globalArray[i].amount < globalArray[i].min) {
+      lowStorage.push(globalArray[i]);
     }
   }
-  return minStorage;
+  console.log(lowStorage);
+  return lowStorage;
 }
 
-storePurchase();
+
 
 
 function renderChart() {
@@ -104,25 +103,25 @@ function renderChart() {
       }
     }
   };
-  new Chart(canvasElem, chartObj); ///eslint-disable-line
+  new Chart(canvasElem, chartObj); //eslint-disable-line
 }
 
 // ***** EXECTUABLE CODE ******
-let pearInv = new Inventory('pear', 40);
-let fishInv = new Inventory('fish', 50);
-let beefInv = new Inventory('beef', 50);
-let chickenInv = new Inventory('chicken', 50);
-let potatoInv = new Inventory('potato', 50);
-let riceInv = new Inventory('rice', 50);
-let pastaInv = new Inventory('pasta', 50);
-let breadInv = new Inventory('bread', 50);
-let saladInv = new Inventory('salad', 50);
-let ketchupInv = new Inventory('ketchup', 50);
-let soupInv = new Inventory('soup', 50);
-let porkInv = new Inventory('pork', 50);
+new Inventory('pear', 40);
+new Inventory('fish', 50);
+new Inventory('beef', 50);
+new Inventory('chicken', 50);
+new Inventory('potato', 50);
+new Inventory('rice', 50);
+new Inventory('pasta', 50);
+new Inventory('bread', 50);
+new Inventory('salad', 50);
+new Inventory('ketchup', 50);
+new Inventory('soup', 50);
+new Inventory('pork', 50);
 
 
-globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, pastaInv, breadInv, saladInv, ketchupInv, soupInv, porkInv);
+// globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, pastaInv, breadInv, saladInv, ketchupInv, soupInv, porkInv);
 
 
 
@@ -131,13 +130,15 @@ storePurchase();
 
 /**********LOCAL STORAGE ************/
 
-let purchaseList = JSON.stringify(minStorage);
+
+let purchaseList = JSON.stringify(lowStorage);
 localStorage.setItem('myPurchase', purchaseList);
 console.log(purchaseList);
 
 let globalStorage = JSON.stringify(globalArray);
 localStorage.setItem('myGlobal', globalStorage);
 console.log(globalStorage);
+
 
 
 /*************Event Listeners **************/
