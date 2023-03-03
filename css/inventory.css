@@ -1,0 +1,67 @@
+
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-weight: 100;
+  background: radial-gradient(#a23982,#1f1013);
+-webkit-animation: fadeIn 1 1s ease-out;
+  -moz-animation: fadeIn 1 1s ease-out;
+  -o-animation: fadeIn 1 1s ease-out;
+  animation: fadeIn 1 1s ease-out;
+
+}
+
+
+#restock-button {
+  display: block;
+  margin: 10px auto; 
+
+}
+
+
+
+#prod-chart {
+display: block;
+margin: auto;
+border: 3px solid;
+background-color: white;
+}
+
+
+
+nav {
+  background-color: radial-gradient(#a23982,#1f1013);
+  margin-bottom: 30px;
+  height: 35px;
+}
+
+#login {
+background-color: black;
+font-size: 25px;
+/* color: white; */
+border-radius: 15px;
+
+
+
+}
+
+#request {
+  background-color: black;
+  font-size: 25px;
+  /* color: white; */
+  border-radius: 15px;
+ 
+
+}
+
+#aboutus2 {
+  background-color: black;
+  font-size: 25px;
+  /* color: white; */
+  border-radius: 15px;
+
+
+}
+

@@ -1,0 +1,223 @@
+body {
+  background-color: #193c6d;
+  filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
+  background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
+  background-image: -webkit-linear-gradient(135deg, #003073, #029797);
+  background-image: -moz-linear-gradient(45deg, #003073, #029797);
+  background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
+  background-image: -o-linear-gradient(45deg, #003073, #029797);
+  background-image: linear-gradient(135deg, #003073, #029797);
+  text-align: center;
+  margin: 0px;
+  overflow: auto;
+}
+
+table {
+  background-color: white;
+  border-collapse: collapse;
+  /* margin: 50px 0; */
+  font-size: 0.9em;
+  font-family: sans-serif;
+  /* min-width:auto; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+#nameRow {
+  border-bottom: 1px solid;
+  padding: 10px;
+  text-align: left;
+  border-top: 1px solid;
+
+}
+
+#name {
+  border: 1px solid;
+  padding: 12px 10px;
+  text-align: left;
+  
+}
+
+#qty {
+  width: 100%;
+  border-collapse: collapse;
+  padding-left: 40px;
+  padding-right: 40px; 
+  text-align: center;
+
+}
+
+#price {
+  padding: 30px;
+  border-left: 1px solid;
+  text-align: right;
+ 
+  
+  
+
+}
+
+#item-name {
+  font-size: 25px;
+  padding-right: 25px;
+}
+
+ #qtyTitle {
+  font-size: 25px;
+  /* border: 1px solid; */
+  text-align: left;
+  padding-left: 30px;
+  
+  
+
+}
+
+#priceTitle {
+  font-size: 25px;
+  border-collapse: collapse;
+  padding-right: 35px;
+  
+}
+
+#totalFooter {
+  font-size: 25px;
+
+}
+
+#totalPrice {
+font-size: 25px;
+text-align: right;
+
+
+}
+
+#request-button {
+display: block;
+margin: 30px auto; 
+font-size: larger;  
+
+}
+button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+footer {
+  text-align: center;
+  margin-top: 600px;
+ }
+
+ #returnLogin {
+  display: block;
+  margin: 30px auto; 
+  font-size: larger;  
+
+
+ }
+
+ img {
+  display: block;
+  margin: 30px auto; 
+  font-size: larger;
+  width: 180px;
+  border-radius: 10px;
+
+
+ }
+
+ #login-button {
+
+  display: block;
+  margin: 30px auto; 
+  font-size: larger;  
+
+ }
+
+
+
+
+
+
+
