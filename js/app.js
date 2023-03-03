@@ -13,12 +13,13 @@ let canvasElem = document.getElementById('prod-chart');
 
 
 // ******* CONSTRUCTOR FUNCTION ********
-function Inventory(name, price) {
+function Inventory(name, price, max) {
   this.name = name;
   this.amount = Math.floor(Math.random() * 37 + 4);
   this.price = price;
   this.min = Math.floor(Math.random() * 37 + 4);
   globalArray.push(this);
+  this.max = max;
 }
 
 
@@ -110,19 +111,26 @@ function renderChart() {
 }
 
 // ***** EXECTUABLE CODE ******
-new Inventory('pear', 40);
-new Inventory('fish', 50);
-new Inventory('beef', 50);
-new Inventory('chicken', 50);
-new Inventory('potato', 50);
-new Inventory('rice', 50);
-new Inventory('pasta', 50);
-new Inventory('bread', 50);
-new Inventory('salad', 50);
-new Inventory('ketchup', 50);
-new Inventory('soup', 50);
-new Inventory('pork', 50);
+let globalArraylocal = localStorage.getItem('myGlobal');
 
+if (globalArraylocal) {
+  globalArray = JSON.parse(globalArraylocal);
+}else {
+
+  new Inventory('pear', 40, 100);
+  new Inventory('fish', 50, 150 );
+  new Inventory('beef', 50, 300);
+  new Inventory('chicken', 50, 150);
+  new Inventory('potato', 50, 150);
+  new Inventory('rice', 50, 150);
+  new Inventory('pasta', 50, 150);
+  new Inventory('bread', 50, 150);
+  new Inventory('salad', 50, 150);
+  new Inventory('ketchup', 50, 150);
+  new Inventory('soup', 50, 150);
+  new Inventory('pork', 50, 150);
+
+}
 
 // globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, pastaInv, breadInv, saladInv, ketchupInv, soupInv, porkInv);
 
@@ -156,7 +164,10 @@ function restockHandler(event) {
   document.location.href = '/request.html';
 }
 
+// export{
+//   storePurchase
 
+// };
 
 
 
