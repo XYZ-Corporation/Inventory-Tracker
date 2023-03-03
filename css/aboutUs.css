@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: lightcyan;
 }
 
 
@@ -27,7 +27,9 @@ article {
 section img 
 {
   width: 200px;
-
+  border-radius: 15px;
+  
+  
 
 }
 
@@ -36,6 +38,11 @@ section img
 h2 {
 border-top: 3px solid;
 font-size: 35px;
+border: solid;
+background-color: lightsalmon;
+text-shadow: white 2px 5px;
+
+
 
 
 }
@@ -43,6 +50,8 @@ font-size: 35px;
 h1 {
 text-align: center;
 font-size: 35px;
+
+
 }
 
 p {
@@ -54,6 +63,10 @@ p {
   word-wrap: break-word;
   padding-top: 40px;
   margin-left:20px;
+  border: solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: antiquewhite;
 }
 
 button {
