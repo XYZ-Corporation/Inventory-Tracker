@@ -11,7 +11,7 @@ body {
   background-image: linear-gradient(135deg, #003073, #029797);
   text-align: center;
   margin: 0px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 table {
