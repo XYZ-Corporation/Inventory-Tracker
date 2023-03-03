@@ -11,20 +11,22 @@ let parsedLocalStorage;
 let retrievedStorage;
 let requested = [];
 let totalAmount = 0;
-let myGlobal = localStorage.getItem('myGlobal');
-console.log(myGlobal);
-function restockInventory(inventory) {
-  let myArray = JSON.parse(inventory);
-  
-  for (let i=0; i < myArray.length; i++) {
-    myArray[i].amount= 50;
-    // let reset= myArray[i].max;
-    // console.log(item);
-    // item = reset;
-    console.log(myArray[i]);
-  } 
+let myGlobal;
+let parseGlobalStorage;
 
-  localStorage.setItem('myGlobal', JSON.stringify(myArray) );
+myGlobal = localStorage.getItem('myGlobal');
+parseGlobalStorage = JSON.parse(myGlobal);
+console.log(parseGlobalStorage);
+
+function restockInventory(inventory) {
+
+
+  for (let i = 0; i < inventory.length; i++) {
+    inventory[i].amount = inventory[i].min;
+    console.log(inventory[i]);
+  }
+
+  localStorage.setItem('myGlobal', JSON.stringify(inventory));
 }
 
 
@@ -36,18 +38,18 @@ function render() {
 
   for (let i = 0; i < parsedLocalStorage.length; i++) {
     let nameRow = document.createElement('tr');
-    nameRow.setAttribute('id','nameRow');
+    nameRow.setAttribute('id', 'nameRow');
     tableElement.appendChild(nameRow);
     let itemName = document.createElement('td');
-    itemName.setAttribute('id','name');
+    itemName.setAttribute('id', 'name');
     nameRow.appendChild(itemName);
     itemName.textContent = parsedLocalStorage[i].name;
-  
+
 
     let requestedRow = document.createElement('tr');
     nameRow.appendChild(requestedRow);
     let requestedAmount = document.createElement('td');
-    requestedAmount.setAttribute('id','qty');
+    requestedAmount.setAttribute('id', 'qty');
     requestedRow.appendChild(requestedAmount);
     requestedAmount.textContent = parsedLocalStorage[i].min - parsedLocalStorage[i].amount;
 
@@ -70,7 +72,7 @@ function render() {
     totalRow.appendChild(totalLabel);
 
     let totalAmount = document.createElement('td');
-    totalAmount.setAttribute('id','totalPrice');
+    totalAmount.setAttribute('id', 'totalPrice');
     totalAmount.textContent = calculateTotal()[0];
     totalRow.appendChild(totalAmount);
 
@@ -81,16 +83,31 @@ function render() {
 
 }
 
+function makeHeader() {
+  let tableHead = document.createElement('thead');
+  tableHead.setAttribute('id', 'item-name');
+  tableElement.appendChild(tableHead);
+  tableElement.textContent = 'Item Name';
+  let firstCell = document.createElement('th');
+  tableElement.appendChild(firstCell);
+  firstCell.textContent = 'Qty';
+  let headerEnd = document.createElement('th');
+  tableElement.appendChild(headerEnd);
+  headerEnd.textContent = 'Price';
+}
+
+makeHeader();
+
 
 
 let purchaseObject = {
-  
-  total : calculateTotal()[0],
-  name : calculateTotal()[1],
-  
+
+  total: calculateTotal()[0],
+  name: calculateTotal()[1],
+
 };
 purchaseHistory.push(purchaseObject);
-console.log('test',purchaseHistory[0]);
+console.log('test', purchaseHistory[0]);
 
 render();
 
@@ -101,8 +118,8 @@ function calculateTotal() {
     total += parsedLocalStorage[i].price * (parsedLocalStorage[i].min - parsedLocalStorage[i].amount);
     names.push(parsedLocalStorage[i].name);
   }
-  return [total,names];
-  
+  return [total, names];
+
 }
 
 
@@ -112,11 +129,11 @@ let requestButton = document.getElementById('request-button');
 
 requestButton.addEventListener('click', requestHandler);
 
-function requestHandler(event){
-  restockInventory(myGlobal);
+function requestHandler(event) {
+  restockInventory(parseGlobalStorage);
   // event.preventDefault();
   function objectRender() {
-    for (let i=0; i < purchaseHistory.length; i++) {
+    for (let i = 0; i < purchaseHistory.length; i++) {
       let previousAmount = document.createElement('p');
       paraElement.appendChild(previousAmount);
       // previousAmount.textContent = purchaseHistory;

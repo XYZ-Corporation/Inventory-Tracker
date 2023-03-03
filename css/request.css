@@ -3,6 +3,7 @@ body {
 }
 
 table {
+  background-color: white;
   border-collapse: collapse;
   margin: 55px 0;
   font-size: 0.9em;
@@ -43,6 +44,14 @@ text-align: left;
   border-left: 1px solid;
   
   
+
+}
+
+#item-name {
+  border-right: 1px solid;
+  padding: 10px;
+  text-align: left;
+
 
 }
 
@@ -135,7 +144,7 @@ button:hover::after, button:focus::after {
 }
 
 
-Resources
+
 
 
 
@@ -159,6 +168,14 @@ footer {
   font-size: larger;
   width: 180px;
 
+
+ }
+
+ #login-button {
+
+  display: block;
+  margin: 30px auto; 
+  font-size: larger;  
 
  }
 
