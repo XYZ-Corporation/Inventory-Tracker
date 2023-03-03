@@ -17,10 +17,10 @@ body {
 table {
   background-color: white;
   border-collapse: collapse;
-  margin: 55px 0;
+  /* margin: 50px 0; */
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width:auto;
+  /* min-width:auto; */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border: 3px solid;
   margin-left: auto;
@@ -29,10 +29,10 @@ table {
 }
 
 #nameRow {
-border-bottom: 1px solid;
-padding: 10px;
-text-align: left;
-
+  border-bottom: 1px solid;
+  padding: 10px;
+  text-align: left;
+  border-top: 1px solid;
 
 }
 
@@ -46,28 +46,51 @@ text-align: left;
 #qty {
   width: 100%;
   border-collapse: collapse;
-  padding: 40px; 
+  padding-left: 40px;
+  padding-right: 40px; 
   text-align: center;
 
 }
 
 #price {
-  padding: 40px;
+  padding: 30px;
   border-left: 1px solid;
+  text-align: right;
+ 
   
   
 
 }
 
 #item-name {
-  border-right: 1px solid;
-  padding: 10px;
-  text-align: left;
+  font-size: 25px;
+  padding-right: 25px;
+}
 
+ #qtyTitle {
+  font-size: 25px;
+  /* border: 1px solid; */
+  text-align: left;
+  padding-left: 30px;
+  
+  
+
+}
+
+#priceTitle {
+  font-size: 25px;
+  border-collapse: collapse;
+  padding-right: 35px;
+  
+}
+
+#totalFooter {
+  font-size: 25px;
 
 }
 
 #totalPrice {
+font-size: 25px;
 text-align: right;
 
 
@@ -179,6 +202,7 @@ footer {
   margin: 30px auto; 
   font-size: larger;
   width: 180px;
+  border-radius: 10px;
 
 
  }

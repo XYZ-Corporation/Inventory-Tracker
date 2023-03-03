@@ -68,6 +68,7 @@ function render() {
     totalAmounts.appendChild(totalRow);
 
     let totalLabel = document.createElement('td');
+    totalLabel.setAttribute('id','totalFooter');
     totalLabel.textContent = 'Total';
     totalRow.appendChild(totalLabel);
 
@@ -82,19 +83,60 @@ function render() {
   footer();
 
 }
-
 function makeHeader() {
   let tableHead = document.createElement('thead');
-  tableHead.setAttribute('id', 'item-name');
   tableElement.appendChild(tableHead);
-  tableElement.textContent = 'Item Name';
-  let firstCell = document.createElement('th');
-  tableElement.appendChild(firstCell);
-  firstCell.textContent = 'Qty';
-  let headerEnd = document.createElement('th');
-  tableElement.appendChild(headerEnd);
-  headerEnd.textContent = 'Price';
+  let headerRow = document.createElement('tr');
+  tableHead.appendChild(headerRow);
+  let itemNameHeader = document.createElement('th');
+  itemNameHeader.setAttribute('id', 'item-name');
+  headerRow.appendChild(itemNameHeader);
+  itemNameHeader.textContent = 'Item Name';
+  let qtyHeader = document.createElement('th');
+  qtyHeader.setAttribute('id', 'qtyTitle');
+  headerRow.appendChild(qtyHeader);
+  qtyHeader.textContent = 'Qty';
+  let priceHeader = document.createElement('th');
+  priceHeader.setAttribute('id', 'priceTitle');
+  headerRow.appendChild(priceHeader);
+  priceHeader.textContent = 'Price';
 }
+
+
+
+// function makeHeader() {
+//   let tableHead = document.createElement('thead');
+//   let tableRow = document.createElement('tr');
+//   tableHead.appendChild(tableRow);
+
+//   let tableItem1 = document.createElement('td');
+//   tableItem1.setAttribute('id', 'item-name');
+//   tableItem1.textContent = 'Item Name';
+//   tableRow.appendChild(tableItem1);
+
+//   let tableItem2 = document.createElement('td');
+//   tableItem2.setAttribute('id', 'qtyTitle');
+//   tableItem2.textContent = 'Qty';
+//   tableRow.appendChild(tableItem2);
+
+//   let tableItem3 = document.createElement('td');
+//   tableItem3.setAttribute('id', 'priceTitle');
+//   tableItem3.textContent = 'Price';
+//   tableRow.appendChild(tableItem3);
+// let tableHead = document.createElement('thead');
+// let tableHeadRow = document.createElement('tr');
+// tableHeadRow.setAttribute('id', 'item-name');
+// tableElement.appendChild(tableHeadRow);
+// tableHeadRow.textContent = 'Item Name';
+// let firstCell = document.createElement('td');
+// firstCell.setAttribute('id', 'qtyTitle');
+// tableElement.appendChild(firstCell);
+// firstCell.textContent = 'Qty';
+// let headerEnd = document.createElement('td');
+// headerEnd.setAttribute('id', 'priceTitle');
+// tableElement.appendChild(headerEnd);
+// headerEnd.textContent = 'Price';
+// }
 
 makeHeader();
 
