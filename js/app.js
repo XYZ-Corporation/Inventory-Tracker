@@ -1,33 +1,26 @@
 'use strict';
 // ******* GLOBALS ********
-let globalArray;
+let globalArray = [];
+let globalStatic = [];
 let lowStorage = [];
-let myUser;
-let userNum;
-let parsedUserInfo;
-let parsedUserNum;
+
+
 
 //  ******* DOM WINDOWS ********
 let canvasElem = document.getElementById('prod-chart');
 // let formElem = document.getElementById('request-form');
 
-userNum = localStorage.getItem('userNum');
-myUser = localStorage.getItem('userData');
-parsedUserInfo = JSON.parse(myUser);
-parsedUserNum = JSON.parse(userNum);
 
-
-globalArray = parsedUserInfo[parsedUserNum].inventory;
 
 // ******* CONSTRUCTOR FUNCTION ********
-// function Inventory(name, price, max) {
-//   this.name = name;
-//   this.amount = Math.floor(Math.random() * 37 + 4);
-//   this.price = price;
-//   this.min = Math.floor(Math.random() * 37 + 4);
-//   globalArray.push(this);
-//   this.max = max;
-// }
+function Inventory(name, price, max) {
+  this.name = name;
+  this.amount = Math.floor(Math.random() * 37 + 4);
+  this.price = price;
+  this.min = Math.floor(Math.random() * 37 + 4);
+  globalArray.push(this);
+  this.max = max;
+}
 
 
 function storePurchase() {
@@ -118,27 +111,26 @@ function renderChart() {
 }
 
 // ***** EXECTUABLE CODE ******
-//***REVISE */
-// let globalArraylocal = localStorage.getItem('myGlobal');
+let globalArraylocal = localStorage.getItem('myGlobal');
 
-// if (globalArraylocal) {
-//   globalArray = JSON.parse(globalArraylocal);
-// }else {
+if (globalArraylocal) {
+  globalArray = JSON.parse(globalArraylocal);
+}else {
 
-//   new Inventory('pear', 40, 100);
-//   new Inventory('fish', 50, 150 );
-//   new Inventory('beef', 50, 300);
-//   new Inventory('chicken', 50, 150);
-//   new Inventory('potato', 50, 150);
-//   new Inventory('rice', 50, 150);
-//   new Inventory('pasta', 50, 150);
-//   new Inventory('bread', 50, 150);
-//   new Inventory('salad', 50, 150);
-//   new Inventory('ketchup', 50, 150);
-//   new Inventory('soup', 50, 150);
-//   new Inventory('pork', 50, 150);
+  new Inventory('pear', 40, 100);
+  new Inventory('fish', 50, 150 );
+  new Inventory('beef', 50, 300);
+  new Inventory('chicken', 50, 150);
+  new Inventory('potato', 50, 150);
+  new Inventory('rice', 50, 150);
+  new Inventory('pasta', 50, 150);
+  new Inventory('bread', 50, 150);
+  new Inventory('salad', 50, 150);
+  new Inventory('ketchup', 50, 150);
+  new Inventory('soup', 50, 150);
+  new Inventory('pork', 50, 150);
 
-// }
+}
 
 // globalArray.push(pearInv, fishInv, beefInv, chickenInv, potatoInv, riceInv, pastaInv, breadInv, saladInv, ketchupInv, soupInv, porkInv);
 
@@ -154,9 +146,9 @@ let purchaseList = JSON.stringify(lowStorage);
 localStorage.setItem('myPurchase', purchaseList);
 console.log(purchaseList);
 
-// let globalStorage = JSON.stringify(globalArray);
-// localStorage.setItem('myGlobal', globalStorage);
-// console.log(globalStorage);
+let globalStorage = JSON.stringify(globalArray);
+localStorage.setItem('myGlobal', globalStorage);
+console.log(globalStorage);
 
 
 
