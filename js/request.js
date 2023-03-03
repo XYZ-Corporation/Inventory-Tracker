@@ -11,6 +11,21 @@ let parsedLocalStorage;
 let retrievedStorage;
 let requested = [];
 let totalAmount = 0;
+let myGlobal = localStorage.getItem('myGlobal');
+console.log(myGlobal);
+function restockInventory(inventory) {
+  let myArray = JSON.parse(inventory);
+  
+  for (let i=0; i < myArray.length; i++) {
+    myArray[i].amount= 50;
+    // let reset= myArray[i].max;
+    // console.log(item);
+    // item = reset;
+    console.log(myArray[i]);
+  } 
+
+  localStorage.setItem('myGlobal', JSON.stringify(myArray) );
+}
 
 
 
@@ -78,7 +93,6 @@ purchaseHistory.push(purchaseObject);
 console.log('test',purchaseHistory[0]);
 
 render();
-objectRender();
 
 function calculateTotal() {
   let total = 0;
@@ -93,15 +107,26 @@ function calculateTotal() {
 
 
 
-function objectRender() {
-  for (let i=0; i < purchaseHistory.length; i++) {
-    let previousAmount = document.createElement('p');
-    paraElement.appendChild(previousAmount);
-    // previousAmount.textContent = purchaseHistory;
-    previousAmount.textContent = `${purchaseHistory[i].name}:${purchaseHistory[i].total}`;
 
+let requestButton = document.getElementById('request-button');
 
+requestButton.addEventListener('click', requestHandler);
 
+function requestHandler(event){
+  restockInventory(myGlobal);
+  // event.preventDefault();
+  function objectRender() {
+    for (let i=0; i < purchaseHistory.length; i++) {
+      let previousAmount = document.createElement('p');
+      paraElement.appendChild(previousAmount);
+      // previousAmount.textContent = purchaseHistory;
+      previousAmount.textContent = `${purchaseHistory[i].name}:${purchaseHistory[i].total}`;
+
+    }
+    console.log('test2');
   }
-  console.log('test2');
+  storePurchase();
+  objectRender();
+
+
 }

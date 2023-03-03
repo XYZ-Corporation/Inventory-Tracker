@@ -1,16 +1,11 @@
 body {
-  background-color: midnightblue;
+  background-color: lightblue;
 }
 
-span {
-  background-color: white;
-}
-a {
-  background-color: white;
-}
 
 article {
   display: block;
+  padding-top: 85px;
   margin-left: auto;
   margin-right: auto;
   border-style: inset;
@@ -31,6 +26,48 @@ article {
 
 section img 
 {
-  width: 250px;
+  width: 200px;
+
 
 }
+
+
+
+h2 {
+border-top: 3px solid;
+font-size: 35px;
+
+
+}
+
+h1 {
+text-align: center;
+font-size: 35px;
+}
+
+p {
+  font-size: x-large;
+  margin-left:20px;
+  margin-bottom: 80px;
+  display: inline-block;
+  position: absolute;
+  word-wrap: break-word;
+  padding-top: 40px;
+  margin-left:20px;
+}
+
+button {
+background-color: black;
+font-size: 25px;
+color: black;
+border-radius: 15px;
+}
+
+button {
+display: inline-block;
+margin-left: auto;
+margin-right: auto;
+
+
+}
+
